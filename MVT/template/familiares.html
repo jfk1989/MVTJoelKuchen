@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familiares</title>
+</head>
+<body>
+    <h1>LISTA DE FAMILIARES</h1>
+    <ul>
+        
+        {% for familiar in lista_familiares  %}
+
+            <li>Tipo: <strong>{{familiar.tipo_f}}</strong> Nombre: <strong>{{familiar.nombre}}</strong> Apellido: <strong>{{familiar.apellido}}</strong> Edad: <strong>{{familiar.edad}}</strong>
+            
+                
+                {% if familiar.estado_f == "fallecido" %}
+            
+                Estado: <strong style="color: red">{{familiar.estado_f}}</strong>
+
+                {% else %}
+                Estado: <strong style="color: green">{{familiar.estado_f}}</strong>
+                {% endif %}
+                
+            </li>
+            
+        {% endfor %}
+            
+
+    </ul>
+</body>
+</html>
